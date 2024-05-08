@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     private float spawnRate = 1.0f;
     private int score;
     public TextMeshProUGUI scoreText;
+    public TextMeshPro gameOverText;
+    public RawImage GameOverImage;
 
 
     // Start is called before the first frame update
@@ -39,4 +42,11 @@ public class GameManager : MonoBehaviour
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
     }
+
+    public void GameOver()
+    {
+        GameOverImage.gameObject.SetActive(true);
+    }
+
+    
 }
